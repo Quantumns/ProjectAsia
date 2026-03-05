@@ -589,10 +589,10 @@ function App() {
 
     // Winter 24/25
     { name: "The Study of International Relations", grade: "5.0", ects: 5, category: "Foundation", semester: 'Winter 24/25' },
-    { name: "Sectoral Analysis", grade: "4.5", ects: 4, category: "Core", semester: 'Winter 24/25' },
-    { name: "Economic History", grade: "4.5", ects: 4, category: "Core", semester: 'Winter 24/25' },
-    { name: "Introductory Language lab", grade: "4.5", ects: 2, category: "Language", semester: 'Winter 24/25' },
-    { name: "Technology Seminar", grade: "4.5", ects: 2, category: "Tech", semester: 'Winter 24/25' },
+    { name: "Political and Economic Geography", grade: "4.5", ects: 4, category: "Core", semester: 'Winter 24/25' },
+    { name: "Philanthropy and International Organisations", grade: "4.5", ects: 4, category: "Core", semester: 'Winter 24/25' },
+    { name: "Arabic language - lower beginner level", grade: "4.5", ects: 2, category: "Language", semester: 'Winter 24/25' },
+    { name: "Information and Communication Technologies", grade: "4.5", ects: 2, category: "Tech", semester: 'Winter 24/25' },
     { name: "Historical Paradigms", grade: "4.0", ects: 5, category: "Core", semester: 'Winter 24/25' },
     { name: "Legal Frameworks", grade: "4.0", ects: 4, category: "Foundation", semester: 'Winter 24/25' },
     { name: "Diversity and Inclusion", grade: "4.0", ects: 2, category: "Core", semester: 'Winter 24/25' },
