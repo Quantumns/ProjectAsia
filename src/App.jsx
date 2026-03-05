@@ -566,37 +566,36 @@ const Footer = () => {
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
- // Historical exact data
+  // Restored actual 5.0 grades for motivation; remaining data uses scrubbed placeholders
   const initialGrades = [
     // Winter 25/26
     { name: "Climate Change, Pandemics and Int. Security", grade: "5.0", ects: 5, category: "High Impact", semester: 'Winter 25/26' },
     { name: "Demography in International Relations", grade: "5.0", ects: 3, category: "Core", semester: 'Winter 25/26' },
     { name: "International Cultural Relations", grade: "5.0", ects: 5, category: "High Impact", semester: 'Winter 25/26' },
     { name: "Polish language course - elementary A1", grade: "5.0", ects: 4, category: "Language", semester: 'Winter 25/26' },
-    { name: "Comparative Socio-Economic Systems", grade: "4.0", ects: 4, category: "Core", semester: 'Winter 25/26' },
-    { name: "International Economic Relations", grade: "4.0", ects: 5, category: "Core", semester: 'Winter 25/26' },
-    // Public International Law is 3/ZAL (Counting as 3.0 for GPA, 6 ECTS)
-    { name: "Public International Law", grade: "3.0", ects: 6, category: "Foundation", semester: 'Winter 25/26' },
+    { name: "Systems Thinking Lab", grade: "4.0", ects: 4, category: "Core", semester: 'Winter 25/26' },
+    { name: "Quantitative Methods", grade: "4.0", ects: 5, category: "Core", semester: 'Winter 25/26' },
+    { name: "Foundational Practicum", grade: "3.0", ects: 6, category: "Foundation", semester: 'Winter 25/26' },
 
     // Summer 24/25
     { name: "Migration Movement and Integration", grade: "5.0", ects: 5, category: "Core", semester: 'Summer 24/25' },
     { name: "European Union military capabilities", grade: "5.0", ects: 4, category: "Core", semester: 'Summer 24/25' },
-    { name: "Shades of populism in Europe", grade: "4.0", ects: 4, category: "Core", semester: 'Summer 24/25' },
-    { name: "Sociology of International Relations", grade: "4.0", ects: 3, category: "Core", semester: 'Summer 24/25' },
-    { name: "Studies on the State", grade: "4.0", ects: 4, category: "Core", semester: 'Summer 24/25' },
-    { name: "Arabic language - second semester", grade: "4.0", ects: 2, category: "Language", semester: 'Summer 24/25' },
-    { name: "Contemporary Political Systems", grade: "4.0", ects: 3, category: "Core", semester: 'Summer 24/25' },
-    { name: "Economics", grade: "3.5", ects: 5, category: "Core", semester: 'Summer 24/25' },
+    { name: "Crisis Simulation", grade: "4.0", ects: 4, category: "Core", semester: 'Summer 24/25' },
+    { name: "Applied Research Design", grade: "4.0", ects: 3, category: "Core", semester: 'Summer 24/25' },
+    { name: "Data Architecture", grade: "4.0", ects: 4, category: "Core", semester: 'Summer 24/25' },
+    { name: "Introductory Language", grade: "4.0", ects: 2, category: "Language", semester: 'Summer 24/25' },
+    { name: "Organizational Psychology", grade: "4.0", ects: 3, category: "Core", semester: 'Summer 24/25' },
+    { name: "Macroeconomics", grade: "3.5", ects: 5, category: "Core", semester: 'Summer 24/25' },
 
     // Winter 24/25
     { name: "The Study of International Relations", grade: "5.0", ects: 5, category: "Foundation", semester: 'Winter 24/25' },
-    { name: "Philanthropy and Int. Organisations", grade: "4.5", ects: 4, category: "Core", semester: 'Winter 24/25' },
-    { name: "Political and Economic Geography", grade: "4.5", ects: 4, category: "Core", semester: 'Winter 24/25' },
-    { name: "Arabic language - lower beginner", grade: "4.5", ects: 2, category: "Language", semester: 'Winter 24/25' },
-    { name: "Info and Communication Tech", grade: "4.5", ects: 2, category: "Tech", semester: 'Winter 24/25' },
-    { name: "History of International Relations", grade: "4.0", ects: 5, category: "Core", semester: 'Winter 24/25' },
-    { name: "Introduction to Law", grade: "4.0", ects: 4, category: "Foundation", semester: 'Winter 24/25' },
-    { name: "Understanding Equality Course", grade: "4.0", ects: 2, category: "Core", semester: 'Winter 24/25' },
+    { name: "Sectoral Analysis", grade: "4.5", ects: 4, category: "Core", semester: 'Winter 24/25' },
+    { name: "Economic History", grade: "4.5", ects: 4, category: "Core", semester: 'Winter 24/25' },
+    { name: "Introductory Language lab", grade: "4.5", ects: 2, category: "Language", semester: 'Winter 24/25' },
+    { name: "Technology Seminar", grade: "4.5", ects: 2, category: "Tech", semester: 'Winter 24/25' },
+    { name: "Historical Paradigms", grade: "4.0", ects: 5, category: "Core", semester: 'Winter 24/25' },
+    { name: "Legal Frameworks", grade: "4.0", ects: 4, category: "Foundation", semester: 'Winter 24/25' },
+    { name: "Diversity and Inclusion", grade: "4.0", ects: 2, category: "Core", semester: 'Winter 24/25' },
   ];
 
   const [grades, setGrades] = useState(initialGrades);
@@ -639,8 +638,8 @@ function App() {
     }
   };
 
-  // Only display the most recent / highest impact grades in the cards to save space
-  const displayGrades = grades.slice(0, 9);
+    // Only display the 5.0 grades in the cards to maintain motivation
+  const displayGrades = grades.filter(g => parseFloat(g.grade) >= 4.5);
 
   return (
     <div className="bg-background min-h-screen text-slate selection:bg-accent selection:text-primary relative">
