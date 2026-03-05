@@ -637,8 +637,8 @@ function App() {
     }
   };
 
-  // Only display the most recent / highest impact grades in the cards to save space
-  const displayGrades = grades.slice(0, 9);
+  // Only display the 5.0 grades in the cards to maintain motivation
+  const displayGrades = grades.filter(g => parseFloat(g.grade) >= 3.0);
 
   return (
     <div className="bg-background min-h-screen text-slate selection:bg-accent selection:text-primary relative">
